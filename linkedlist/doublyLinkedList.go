@@ -3,59 +3,59 @@ package linkedlist
 import "fmt"
 
 type NodeDoubled struct {
-	value int
+	value int32
 	next  *NodeDoubled
 	prev  *NodeDoubled
 }
 
 type DoubledLinkedList struct {
-	head *NodeDoubled
-	tail *NodeDoubled
+	Head *NodeDoubled
+	Tail *NodeDoubled
 }
 
 //insert new element at the end of the existing list
 
-func (dll *DoubledLinkedList) insertFront(data int) {
+func (dll *DoubledLinkedList) InsertFront(data int32) {
 	newNode := &NodeDoubled{value: data, next: nil, prev: nil}
 
-	if dll.head == nil {
-		dll.head = newNode
-		dll.tail = newNode
+	if dll.Head == nil {
+		dll.Head = newNode
+		dll.Tail = newNode
 	} else {
-		newNode.next = dll.head
-		dll.head.prev = newNode
-		dll.head = newNode
+		newNode.next = dll.Head
+		dll.Head.prev = newNode
+		dll.Head = newNode
 	}
 }
 
-func (dll *DoubledLinkedList) insertEnd(data int) {
+func (dll *DoubledLinkedList) InsertEnd(data int32) {
 	newNode := &NodeDoubled{value: data, next: nil, prev: nil}
 
-	if dll.head == nil {
-		dll.head = newNode
-		dll.tail = newNode
+	if dll.Head == nil {
+		dll.Head = newNode
+		dll.Tail = newNode
 	} else {
-		newNode.prev = dll.tail
-		dll.tail.next = newNode
-		dll.tail = newNode
+		newNode.prev = dll.Tail
+		dll.Tail.next = newNode
+		dll.Tail = newNode
 	}
 }
 
-func (dll *DoubledLinkedList) insertAt(data, position int) {
+func (dll *DoubledLinkedList) InsertAt(data int32, position int) {
 	newNode := &NodeDoubled{value: data, next: nil, prev: nil}
 
 	if position <= 0 {
-		dll.insertFront(data)
+		dll.InsertFront(data)
 		return
 	}
 
-	current := dll.head
+	current := dll.Head
 	for i := 1; i < position && current != nil; i++ {
 		current = current.next
 	}
 
 	if current == nil {
-		dll.insertEnd(data)
+		dll.InsertEnd(data)
 		return
 	}
 
@@ -69,9 +69,9 @@ func (dll *DoubledLinkedList) insertAt(data, position int) {
 
 }
 
-func (dll *DoubledLinkedList) delete(data int) {
+func (dll *DoubledLinkedList) Delete(data int32) {
 
-	current := dll.head
+	current := dll.Head
 
 	for current != nil && current.value != data {
 		current = current.next
@@ -81,29 +81,29 @@ func (dll *DoubledLinkedList) delete(data int) {
 		fmt.Printf("Not found such a Node")
 	}
 
-	//to distinguish if the deleted node is the head
+	//to distinguish if the deleted node is the Head
 	if current.prev != nil {
 		current.prev.next = current.next
 	} else {
-		dll.head = current.next
+		dll.Head = current.next
 	}
 
-	//to distinguish if the deleted node is the tail
+	//to distinguish if the deleted node is the Tail
 	if current.next != nil {
 		current.next.prev = current.prev
 	} else {
-		dll.tail = current.prev
+		dll.Tail = current.prev
 	}
 
-	if dll.head == nil {
-		dll.tail = nil
+	if dll.Head == nil {
+		dll.Tail = nil
 	}
 
 }
 
-func (dll *DoubledLinkedList) search(value int) *NodeDoubled {
+func (dll *DoubledLinkedList) Search(value int32) *NodeDoubled {
 
-	current := dll.head
+	current := dll.Head
 
 	for current != nil && current.value != value {
 		current = current.next
@@ -115,10 +115,10 @@ func (dll *DoubledLinkedList) search(value int) *NodeDoubled {
 	return current
 }
 
-func (dll *DoubledLinkedList) display() {
+func (dll *DoubledLinkedList) Display() {
 
-	current := dll.head
-	for current.next != nil {
+	current := dll.Head
+	for current != nil {
 		fmt.Printf("%d -> ", current.value)
 		current = current.next
 	}

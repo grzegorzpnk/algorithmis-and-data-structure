@@ -26,3 +26,16 @@ In a doubly linked list, each node contains references to both the next and prev
 In a circular linked list, the last node points back to the head node, creating a circular structure. It can be either singly or doubly linked.
 
 ![img_3.png](img_3.png)
+
+
+Standard operations:
+1. Insert Node at the beggining
+2. Insert Node at the end
+3. Insert Node at any position
+4. Delete Node
+5. Check if Node exist
+5. Print
+
+HackerRank:
+
+https://www.hackerrank.com/domains/data-structures?filters%5Bsubdomains%5D%5B%5D=linked-lists
