@@ -1,47 +1,69 @@
 package maps
 
-import "fmt"
+import (
+	"fmt"
+)
+
+//type StringIntMap map[string]int
+//
+//func createHashMap() StringIntMap {
+//
+//	hashMap := make(map[string]int)
+//	fmt.Println("New HashMap created!")
+//	return hashMap
+//}
+//
+//
 
 type StringIntMap map[string]int
 
-func createHashMap() StringIntMap {
+func CreateStringIntMap() StringIntMap {
 
 	hashMap := make(map[string]int)
-	fmt.Println("New HashMap created!")
+
+	//alternative way to declare and initialize map
+	//hashMap2 := map[string]int{} //-> composite literal
+	//return hashMap2
+
 	return hashMap
+
 }
 
 func (m StringIntMap) AddToHashMap(key string, value int) bool {
 
 	_, exists := m[key]
+
 	if exists {
-		fmt.Printf("Object: %v already exist in HashMap!\n", key)
+		fmt.Printf("key %s already exist in map!", key)
 		return false
 	} else {
 		m[key] = value
-		fmt.Printf("Object: %v added to HashMap!\n", key)
+		fmt.Printf("key %s added to map!\n", key)
 		return true
 	}
+
 }
 
 func (m StringIntMap) RemoveFromHashMap(key string) bool {
 
 	_, exists := m[key]
+
 	if exists {
-		fmt.Printf("Object: %v not exists in HashMap!\n", key)
-		return false
-	} else {
 		delete(m, key)
-		fmt.Printf("Object: %v removed from HashMap!\n", key)
+		fmt.Printf("key %s deleted from map!", key)
 		return true
+	} else {
+		fmt.Printf("key %s do not exists in map!", key)
+		return false
 	}
 }
 
-func (m StringIntMap) PrintHashMap() {
-	fmt.Println("HashMap: ")
+func (m StringIntMap) PrintMap() {
 
+	fmt.Println("Hash Map: ")
 	for key, value := range m {
-		fmt.Printf("key: %v, value: %v\n", key, value)
+		fmt.Printf("key: [%s], value: [%d]\n", key, value)
+
 	}
 
 }
