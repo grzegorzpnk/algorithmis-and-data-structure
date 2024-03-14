@@ -1,67 +1,51 @@
 package main
 
-import "learning/maps"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 
-	hashMap := maps.CreateStringIntMap()
-	hashMap.AddToHashMap("jablko", 2)
-	hashMap.AddToHashMap("gruszka", 4)
-	hashMap.PrintMap()
-	hashMap.RemoveFromHashMap("samochod")
-	hashMap.PrintMap()
-	hashMap.RemoveFromHashMap("jablko")
-	hashMap.PrintMap()
-	hashMap.AddToHashMap("gruszka", 5)
-	hashMap.PrintMap()
+	slice := CreateSlice(0)
+	slice.AddElement(3)
+	slice.AddElement(5)
+	slice.AddElement(1)
+	slice.AddElement(0)
+	slice.AddElement(14)
+	slice.AddElement(3)
+	slice.PrintSlice()
+	tmp := sort.Reverse(slice)
+	fmt.Println(tmp)
+	slice.PrintSlice()
+	//
+	//arr := make(arrType, 5)
+	////var arr [5]int
+	//fmt.Println(arr)
+	//arr[0] = 1
+	//arr[1] = 2
+	//arr[2] = 3
+	//arr[3] = 4
+	//arr[4] = 5
+	//arr = AddElement(arr, 8)
+	//fmt.Println("State 1")
+	//fmt.Println(arr)
+	//ModifyArray(arr)
+	//
+	//fmt.Println("Arr 2")
+	//fmt.Println(arr)
+	//fmt.Println("Arr 1")
+	//fmt.Println(arr)
 
-	//
-	//var array [2]int
-	//array2 := [2]int{3, 5}
-	//
-	//var slice []int
-	//slice = []int{2, 3, 4, 5, 5}
-	//
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(array), cap(array), array)
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(array2), cap(array2), array2)
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(slice), cap(slice), slice)
-	//
-	//mySlice := make([]int, 5, 10)
-	//var mySlice2 []int
-	//mySlice2 = []int{2, 4}
-	//
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(mySlice), cap(mySlice), mySlice)
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(mySlice2), cap(mySlice2), mySlice2)
-	//
-	//var extendedSlice []int
-	//for i := 0; i < 100; i++ {
-	//	extendedSlice = append(extendedSlice, i)
-	//	fmt.Printf("length: %d, capacity: %d\n", len(extendedSlice), cap(extendedSlice))
-	//	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(extendedSlice), cap(extendedSlice), extendedSlice)
-	//
-	//}
-	//
-	//var s1, s2, s3 []int
-	//s1 = []int{1, 2, 3, 4, 5, 6, 7, 8}
-	//s2 = s1
-	//s3 = make([]int, len(s1))
-	//copy(s3, s1)
-	//
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(s1), cap(s1), s1)
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(s2), cap(s2), s2)
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(s3), cap(s3), s3)
-	//s1[2] = 3
-	//s1[3] = 3
-	//s1[4] = 3
-	//s1[5] = 3
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(s1), cap(s1), s1)
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(s2), cap(s2), s2)
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(s3), cap(s3), s3)
-	//
-	//s4 := append(s3, 91)
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(s4), cap(s4), s4)
-	//s4[2] = 5
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(s3), cap(s3), s3)
-	//fmt.Printf("length: %d, capacity: %d, content: %d\n", len(s4), cap(s4), s4)
+}
 
+func ModifyArray(arr []int) {
+	arr[2] = 300
+}
+
+type arrType []int
+
+func AddElement(arr []int, elem int) []int {
+	arr = append(arr, elem)
+	return arr
 }

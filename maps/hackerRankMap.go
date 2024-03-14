@@ -78,13 +78,11 @@ func fourSum(nums []int, target int) [][]int {
 
 func threeSums(nums []int) [][]int {
 	var result [][]int
-
 	tripleMaps := make(map[[3]int][]int)
 
 	for i := 0; i < len(nums)-2; i++ {
 		for x := i + 1; x < len(nums)-1; x++ {
 			for z := x + 1; z < len(nums); z++ {
-
 				if nums[i]+nums[x]+nums[z] == 0 {
 					triple := [3]int{nums[i], nums[x], nums[z]}
 					sort.Ints(triple[:])
@@ -97,6 +95,5 @@ func threeSums(nums []int) [][]int {
 	for _, v := range tripleMaps {
 		result = append(result, v)
 	}
-
 	return result
 }
