@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"learning/hackerRank/ArraysAndHash"
+	"learning/hackerRank/stacks"
 )
 
 func main() {
@@ -21,8 +21,7 @@ func main() {
 	//
 
 	//nums := []int{0, 3, 7, 2, 5, 8, 4, 1x6, 0, 1}
-	nums2 := []int{0, -1}
-	fmt.Println(ArraysAndHash.LongestConsecutive(nums2))
+	fmt.Println(stacks.IsValid("([]{)}"))
 
 	//fmt.Println(ArraysAndHash.TopKFrequent([]int{5, 5, 5, 5, 1, 1, 1, 2, 2, 3, 8, 8, 8, 8, 8, 8, 8}, 2))
 	//fmt.Println(ArraysAndHash.TopKFrequent([]int{1, 2}, 2))
