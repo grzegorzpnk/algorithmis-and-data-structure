@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"learning/hackerRank/ArraysAndHash"
 )
 
@@ -20,7 +19,12 @@ func main() {
 	//slice.PrintSlice()
 	//
 
-	nums := []int{1, 2, 3, 1}
-	fmt.Println(ArraysAndHash.ContainsDuplicate(nums))
+	nums := []int{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}
+	ArraysAndHash.LongestConsecutive(nums)
+
+	//fmt.Println(ArraysAndHash.TopKFrequent([]int{5, 5, 5, 5, 1, 1, 1, 2, 2, 3, 8, 8, 8, 8, 8, 8, 8}, 2))
+	//fmt.Println(ArraysAndHash.TopKFrequent([]int{1, 2}, 2))
+	//var results []int
+	//ArraysAndHash.ProductExceptSelf(nums)
 
 }
