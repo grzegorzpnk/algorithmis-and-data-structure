@@ -1,0 +1,1 @@
+https://blog.stackademic.com/golang-design-generics-vs-interfaces-how-it-really-works-under-the-hood-c1e5057a7ae6

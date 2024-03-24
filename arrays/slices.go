@@ -31,6 +31,7 @@ func (s SliceInt) PrintSlice() {
 }
 
 // AddElement value receiver
+// need to be done like that, cause append returns new slice, so we need to assign it under the address
 func (s *SliceInt) AddElement(elem int) {
 	*s = append(*s, elem)
 }
