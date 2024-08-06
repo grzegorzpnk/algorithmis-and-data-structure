@@ -39,3 +39,6 @@ Standard operations:
 HackerRank:
 
 https://www.hackerrank.com/domains/data-structures?filters%5Bsubdomains%5D%5B%5D=linked-lists
+
+Sources:
+https://edwinsiby.medium.com/understanding-linked-lists-in-go-a-comprehensive-guide-for-all-skill-levels-1e3d91a24d08
