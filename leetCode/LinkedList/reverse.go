@@ -28,8 +28,8 @@ func reverseList(head *ListNode) *ListNode {
 		//previousNode = currentNode
 		//currentNode = tmp
 
-		tmp := currentNode.Next
-		currentNode = previousNode
+		//tmp := currentNode.Next
+		//currentNode = previousNode
 		previousNode = currentNode
 	}
 
