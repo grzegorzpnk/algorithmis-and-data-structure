@@ -1,30 +1,41 @@
 package main
 
-import (
-	"learning/hackerRank/stacks"
-)
-
 func main() {
 
-	//slice := CreateSlice(0)
-	//slice.AddElement(3)
-	//slice.AddElement(5)
-	//slice.AddElement(1)
-	//slice.AddElement(0)
-	//slice.AddElement(14)
-	//slice.AddElement(3)
-	//slice.PrintSlice()
-	//tmp := sort.Reverse(slice)
-	//fmt.Println(tmp)
-	//slice.PrintSlice()
-	//
+	myArr := []int{10, 9, 2, 5, 3, 7, 101, 18}
+	lengthOfLIS(myArr)
 
-	//nums := []int{0, 3, 7, 2, 5, 8, 4, 1x6, 0, 1}
-	stacks.DailyTemperatures([]int{73, 74, 75, 71, 69, 72, 76, 73})
+}
 
-	//fmt.Println(ArraysAndHash.TopKFrequent([]int{5, 5, 5, 5, 1, 1, 1, 2, 2, 3, 8, 8, 8, 8, 8, 8, 8}, 2))
-	//fmt.Println(ArraysAndHash.TopKFrequent([]int{1, 2}, 2))
-	//var results []int
-	//ArraysAndHash.ProductExceptSelf(nums)
+func lengthOfLIS(nums []int) int {
 
+	dp := make([]int, len(nums))
+	for i := range dp {
+		dp[i] = 1
+	}
+
+	for i := 1; i < len(nums); i++ {
+		for j := 0; j < i; j++ {
+			if nums[i] > nums[j] {
+				dp[i] = max(dp[j]+1, dp[i])
+			}
+		}
+	}
+
+	maxVal := 0
+	for _, value := range dp {
+		if value > maxVal {
+			maxVal = value
+		}
+	}
+
+	return maxVal
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	} else {
+		return b
+	}
 }

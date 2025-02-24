@@ -26,7 +26,6 @@ func (ll *LinkedList) insert(data int) {
 		}
 		current.next = newNode
 	}
-
 }
 
 func (ll *LinkedList) delete(key int) {
