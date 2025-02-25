@@ -35,3 +35,32 @@ func TopKFrequent(nums []int, k int) []int {
 
 	return results
 }
+
+func topKFrequent(nums []int, k int) []int {
+
+	freqMap := make(map[int]int)
+
+	for _, v := range nums {
+		freqMap[v]++
+	}
+
+	bucket := make([][]int, len(nums)+1)
+
+	for i, v := range freqMap {
+		bucket[v] = append(bucket[v], i)
+	}
+
+	ans := make([]int, 0, k)
+
+	for i := len(bucket) - 1; i >= 0; i-- {
+		for _, v := range bucket[i] {
+			if k > 0 {
+				ans = append(ans, v)
+				k--
+			}
+		}
+	}
+
+	return ans
+
+}
