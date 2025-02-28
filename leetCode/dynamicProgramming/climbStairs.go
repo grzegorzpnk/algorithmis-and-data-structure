@@ -1,12 +1,5 @@
-package main
+package dynamicProgramming
 
-import "fmt"
-
-func main() {
-
-	fmt.Println(climbStairs(10))
-
-}
 func climbStairs(n int) int {
 
 	if n < 3 {
