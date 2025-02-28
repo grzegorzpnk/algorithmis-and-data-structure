@@ -1,12 +1,6 @@
-package main
+package binarySearch
 
-import "fmt"
-
-func main() {
-
-	fmt.Println(mySqrt(8))
-
-}
+//https://leetcode.com/problems/word-break/description/?envType=study-plan-v2&envId=top-interview-150
 func mySqrt(x int) int {
 	start, end := 0, x+1
 
