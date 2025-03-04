@@ -1,12 +1,7 @@
-package main
-
-import "fmt"
+package dynamicProgramming
 
 func coinChange(coins []int, amount int) int {
-	//create dp slice
 	dp := make([]int, amount+1)
-
-	//initialize dp slice with values of
 	for i := range dp {
 		dp[i] = amount + 1
 	}
@@ -31,8 +26,8 @@ func min(a, b int) int {
 	return b
 }
 
-func main() {
-	coins := []int{1, 2, 5}
-	amount := 11
-	fmt.Println(coinChange(coins, amount)) // Output: 3
-}
+//func main() {
+//	coins := []int{1, 2, 5}
+//	amount := 11
+//	fmt.Println(coinChange(coins, amount))  // Output: 3
+//}
