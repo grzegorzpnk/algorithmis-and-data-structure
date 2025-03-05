@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package _D_DP
 
 func minimumTotal(triangle [][]int) int {
 	n := len(triangle)
@@ -17,16 +15,4 @@ func minimumTotal(triangle [][]int) int {
 	}
 
 	return dp[0]
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
-func main() {
-	triangle := [][]int{{2}, {3, 4}, {6, 5, 7}, {4, 1, 8, 3}}
-	fmt.Println(minimumTotal(triangle))
 }
